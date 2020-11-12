@@ -306,6 +306,7 @@ class TemplateProcessor
      */
     public function setValue($search, $replace, $limit = self::MAXIMUM_REPLACEMENTS_DEFAULT)
     {
+        $replace = htmlspecialchars($replace);
         if (is_array($search)) {
             foreach ($search as &$item) {
                 $item = static::ensureMacroCompleted($item);
